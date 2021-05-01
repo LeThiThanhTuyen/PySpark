@@ -50,36 +50,22 @@
 <p><b>&nbsp;&nbsp;&nbsp;&nbsp; *<u>Ví dụ </u>: <em>Với dữ liệu được người dùng tạo trực tiếp</em></b></p>
 
 ```python
+!pip install pyspark
 import pyspark
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
 import collections
 
-data = [('51800574','Nhan','Trong Huynh','Than','2000-10-18','M',2000),
-  ('51800903','Minh','Nhat','Pham','2000-02-12','M',2200),
-  ('51800886','Linh','Nhat','Nguyen','2000-09-01','M',2200),
-  ('51800904','Nam','Van','Ho','2000-05-01','M',1980),
-  ('51800631','Thong','Huy','Luu','2000-12-24','M',1900)
+data = [('51800650','Tuyen','Thi Thanh','Le','2000-09-16','F'),
+  ('51800884','Kien','Trung','Pham','2000-05-12','M'),
+  ('51800223','Nhu','Thi Quynh','Nguyen','2000-02-16','F')
 ]
 
-columns = ["id","firstname","middlename","lastname","birth","gender","salary"]
+columns = ["id","firstname","middlename","lastname","birth","gender"]
 df = spark.createDataFrame(data=data, schema = columns)
 df.show()
 ```
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Sau khi thực hiện xong đoạn code trên, chương trình sẽ in ra màn hình kết quả sau:</p>
-
-```python
-+--------+---------+-----------+--------+----------+------+------+
-|      id|firstname| middlename|lastname|     birth|gender|salary|
-+--------+---------+-----------+--------+----------+------+------+
-|51800574|     Nhan|Trong Huynh|    Than|2000-10-18|     M|  2000|
-|51800903|     Minh|       Nhat|    Pham|2000-02-12|     M|  2200|
-|51800886|     Linh|       Nhat|  Nguyen|2000-09-01|     M|  2200|
-|51800904|      Nam|        Van|      Ho|2000-05-01|     M|  1980|
-|51800631|    Thong|        Huy|     Luu|2000-12-24|     M|  1900|
-+--------+---------+-----------+--------+----------+------+------+
-```
-<p align="justify"><b>&nbsp;&nbsp; *<u>Ví dụ </u>: <em>Với dữ liệu được load từ dataset (file dữ liệu có sẵn)</em></b> - <em> link datasets: https://archive.ics.uci.edu/ml/machine-learning-databases/car/ </em></p>
+<p align="justify"><b>&nbsp;&nbsp; *<u>Ví dụ </u>: <em>Với dữ liệu được load từ dataset (file dữ liệu có sẵn)</em></b> - <em> link datasets: https://archive.ics.uci.edu/ml/datasets/Iris/ </em></p>
 
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Đọc dữ liệu từ file <em>ecoli.data</em> dưới dạng csv thông qua câu lệnh <em>spark.read.csv()</em>
 
@@ -90,59 +76,16 @@ from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
 import collections
 
-path = str(os.getcwd()) + "/car.data"
-data_car = spark.read.csv(path, header = False, inferSchema = True)
+path = str(os.getcwd()) + "/iris.data"
+data_iris = spark.read.csv(path, header = False, inferSchema = True)
 
-data_car.show()
+data_iris.show()
 ```
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Sau khi thực hiện xong đoạn code trên, chương trình sẽ in ra màn hình kết quả sau:</p>
-
-```python
-+-----+-----+---+----+-----+----+-----+
-|  _c0|  _c1|_c2| _c3|  _c4| _c5|  _c6|
-+-----+-----+---+----+-----+----+-----+
-|vhigh|vhigh|  2|   2|small| low|unacc|
-|vhigh|vhigh|  2|   2|small| med|unacc|
-|vhigh|vhigh|  2|   2|small|high|unacc|
-|vhigh|vhigh|  2|   2|  med| low|unacc|
-|vhigh|vhigh|  2|   2|  med| med|unacc|
-|vhigh|vhigh|  2|   2|  med|high|unacc|
-|vhigh|vhigh|  2|   2|  big| low|unacc|
-|vhigh|vhigh|  2|   2|  big| med|unacc|
-|vhigh|vhigh|  2|   2|  big|high|unacc|
-|vhigh|vhigh|  2|   4|small| low|unacc|
-|vhigh|vhigh|  2|   4|small| med|unacc|
-|vhigh|vhigh|  2|   4|small|high|unacc|
-|vhigh|vhigh|  2|   4|  med| low|unacc|
-|vhigh|vhigh|  2|   4|  med| med|unacc|
-|vhigh|vhigh|  2|   4|  med|high|unacc|
-|vhigh|vhigh|  2|   4|  big| low|unacc|
-|vhigh|vhigh|  2|   4|  big| med|unacc|
-|vhigh|vhigh|  2|   4|  big|high|unacc|
-|vhigh|vhigh|  2|more|small| low|unacc|
-|vhigh|vhigh|  2|more|small| med|unacc|
-+-----+-----+---+----+-----+----+-----+
-only showing top 20 rows
-```
-
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Để có một cái nhìn vào lược đồ tức là cấu trúc của DataFrame, ta sẽ sử dụng phương thức <em>printSchema()</em> . Điều này sẽ cung cấp cho ta các cột khác nhau trong khung dữ liệu của chúng tôi cùng với kiểu dữ liệu và điều kiện có thể null cho cột cụ thể đó:</p>
 
 ```python
 data_car.printSchema()
 ```
-<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Sau khi thực hiện xong câu lệnh trên, chương trình sẽ in ra màn hình kết quả sau:</p>
-
-```python
-root
- |-- _c0: string (nullable = true)
- |-- _c1: string (nullable = true)
- |-- _c2: string (nullable = true)
- |-- _c3: string (nullable = true)
- |-- _c4: string (nullable = true)
- |-- _c5: string (nullable = true)
- |-- _c6: string (nullable = true)
-```
-
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Ngoài ra, DataFrame còn cung cấp một số câu lệnh khác khá hữu dụng cho việc thao tác trên dữ liệu và xử lý dữ liệu như</p>
 
  - <em>describe()</em>: cung cấp cho chúng ta một tóm tắt thống kê của cột nhất định, nếu không được chỉ định, nó cung cấp tóm tắt thống kê của khung dữ liệu.
@@ -302,22 +245,13 @@ prediction = model.predict([0.0, 0.0])
 ```
 
 ## Phần 3: Tài liệu tham khảo
-&nbsp;&nbsp;&nbsp;&nbsp; 1.	http://itechseeker.com/tutorials/apache-spark/lap-trinh-spark-voi-scala/spark-sql-dataset-va-dataframes/
 
-&nbsp;&nbsp;&nbsp;&nbsp; 2.	https://dzone.com/articles/pyspark-dataframe-tutorial-introduction-to-datafra
+&nbsp;&nbsp;&nbsp;&nbsp; 1.	https://dzone.com/articles/pyspark-dataframe-tutorial-introduction-to-datafra
 
-&nbsp;&nbsp;&nbsp;&nbsp; 3.	https://codetudau.com/xu-ly-du-lieu-voi-spark-dataframe/index.html
+&nbsp;&nbsp;&nbsp;&nbsp; 2. https://www.edureka.co/blog/pyspark-dataframe-tutorial/#what
 
-&nbsp;&nbsp;&nbsp;&nbsp; 4. https://helpex.vn/article/huong-dan-pyspark-dataframe-gioi-thieu-ve-dataframes-5c6b21e6ae03f628d053c29e
+&nbsp;&nbsp;&nbsp;&nbsp; 3. https://sparkbyexamples.com/pyspark-tutorial/
 
-&nbsp;&nbsp;&nbsp;&nbsp; 5. https://www.edureka.co/blog/pyspark-dataframe-tutorial/#what
+&nbsp;&nbsp;&nbsp;&nbsp; 4. https://ichi.pro/vi/spark-for-machine-learning-su-dung-python-va-mllib-74075263465224?fbclid=IwAR1mcgL68P3_A3ywD1-PhKNTAbnhCQO1mtsdJJgCLIJzhDjzovJBmKVDNus
 
-&nbsp;&nbsp;&nbsp;&nbsp; 6. https://sparkbyexamples.com/pyspark-tutorial/
-
-&nbsp;&nbsp;&nbsp;&nbsp; 7. https://www.analyticsvidhya.com/blog/2020/11/introduction-to-spark-mllib-for-big-data-and-machine-learning/?fbclid=IwAR2jdRLGb1hKqsuHrmOYDCiGTpdbD20VWrSMAjSVxUlwbPmIl3s0RaApaUw
-
-&nbsp;&nbsp;&nbsp;&nbsp; 8. https://ichi.pro/vi/spark-for-machine-learning-su-dung-python-va-mllib-74075263465224?fbclid=IwAR1mcgL68P3_A3ywD1-PhKNTAbnhCQO1mtsdJJgCLIJzhDjzovJBmKVDNus
-
-&nbsp;&nbsp;&nbsp;&nbsp; 9. https://spark.apache.org/docs/0.9.0/mllib-guide.html
-
-&nbsp;&nbsp;&nbsp;&nbsp; 10. https://www.baeldung.com/spark-mlib-machine-learning
+&nbsp;&nbsp;&nbsp;&nbsp; 5. https://www.baeldung.com/spark-mlib-machine-learning
