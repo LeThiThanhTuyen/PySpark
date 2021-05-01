@@ -8,7 +8,6 @@
 </div>
 
 ### II. Lợi ích mà DataFrame mang lại
-<ul align="justify">
   <li><b><em>Sử dụng Công cụ tối ưu hóa đầu vào : DataFrames sử dụng các công cụ tối ưu hóa đầu vào, ví dụ: Trình tối ưu hóa xúc tác , để xử lý dữ liệu một cách hiệu quả. Chúng ta có thể sử dụng cùng một công cụ cho tất cả các API Python, Java, Scala và R DataFrame.</li></br>
   
   <li><b><em></em>Slicing và Dicing</b>: Xử lý dữ liệu có cấu trúc : DataFrames cung cấp một cái nhìn sơ đồ về dữ liệu. Ở đây, dữ liệu có một số ý nghĩa đối với nó khi nó đang được lưu trữ.</li></br>
@@ -19,8 +18,6 @@
   
    <li><b><em>Nguồn dữ liệu</em></b>: Khả năng mở rộng : DataFrames có thể được tích hợp với nhiều công cụ Dữ liệu lớn khác và chúng cho phép xử lý megabyte đến petabyte dữ liệu cùng một lúc.</li></br>
     
-</ul>
-
 ### III.	Các tính năng của DataFrame, nguồn dữ liệu PySpark và các định dạng tệp được hỗ trợ
 #### 1.	Các tính năng
 <p align="center"><img src ="https://user-images.githubusercontent.com/77878466/106385562-81c84f80-6403-11eb-9a1d-37f785ef7d23.png" width="50%"/></p>
