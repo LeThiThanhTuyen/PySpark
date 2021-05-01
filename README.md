@@ -81,7 +81,7 @@ data_iris.show()
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Để có một cái nhìn vào lược đồ tức là cấu trúc của DataFrame, ta sẽ sử dụng phương thức <em>printSchema()</em> . Điều này sẽ cung cấp cho ta các cột khác nhau trong khung dữ liệu của chúng tôi cùng với kiểu dữ liệu và điều kiện có thể null cho cột cụ thể đó:</p>
 
 ```python
-data_car.printSchema()
+data_iris.printSchema()
 ```
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Ngoài ra, DataFrame còn cung cấp một số câu lệnh khác khá hữu dụng cho việc thao tác trên dữ liệu và xử lý dữ liệu như</p>
 
@@ -93,6 +93,8 @@ data_car.printSchema()
 ### I. Đôi nét về Machine Learning
 <div align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Học máy là một phần của một phần mở rộng hơn được gọi là Trí tuệ nhân tạo. Học máy đề cập đến việc nghiên cứu các mô hình thống kê để giải quyết các vấn đề cụ thể với các mẫu và suy luận. Các mô hình này được “huấn luyện” cho một vấn đề cụ thể bằng cách sử dụng dữ liệu huấn luyện rút ra từ không gian bài toán.</div>
 
+<div align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Thời gian gần đây, chương trình cải cách giáo dục đã bớt nhồi nhét kiến thức thay vào đó là chuyển sang phương pháp tự học, nghĩa là cung cấp cho học sinh, sinh viên phương pháp và cung cấp dữ liệu (tài liệu học), học sinh và sinh viên sẽ tự đúc kết thành kiến thức, trí tuệ của mình. Đây cũng chính là phương pháp mà Machine Learning áp dụng cho AI. Nghĩa là cung cấp phương pháp học, dữ liệu, máy học sẽ dựa trên 02 nhân tố này để hình thành nên tri thức, phát hiện ra lỗi sai, lỗi đúng. Các lập trình viên không phải viết chương trình cho bài toán cụ thể mà họ chỉ cần viết phương pháp thuật toán chung, sau đó họ cung cấp đầu vào dữ liệu để máy tính phân biệt đúng sai, đây gọi là quá trình training, qua quá trình này máy tính sẽ tìm được hàm, thuật toán gần đúng nhất với bài toán.
+  
 #### 1. Các phạm trù phân loại của học máy (Machine learning)
 <p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Theo một cách tiếp cận, thì thông thường học máy được phân loại thành hai mục là supervised learning và unsupervised learning.</p>
 
