@@ -1,16 +1,19 @@
 # PySpark
 ## Phần 1: Spark DataFrame
 ### I.	Tổng quát về Spark DataFrame
-<div align="justify">
-<p align="center"><img src ="https://user-images.githubusercontent.com/77878466/116780466-3af00180-aaa7-11eb-88fc-f7b937db4e42.png" width="70%"/></p>
- &nbsp;&nbsp;&nbsp;&nbsp; DataFrame là một API bậc cao hơn RDD được Spark giới thiệu vào năm 2013 (từ Apache Spark 1.3). Tương tự như RDD, dữ liệu trong DataFrame cũng được quản lý theo kiểu phân tán và không thể thay đổi (immutable distributed). Tuy nhiên dữ liệu này được sắp sếp theo các cột, tương tự như trong Relation Database. DataFrame được phát triển để giúp người dùng có thể dễ dàng thực hiện các thao tác xử lý dữ liệu cũng như làm tăng đáng kể hiệu quả sử lý của hệ thống.</p>
-</div>
-<div align="justify"> &nbsp;&nbsp;&nbsp;&nbsp; Theo Databricks, DataFrame là một tập hợp dữ liệu phân tán được tổ chức thành các cột được đặt tên. Về mặt khái niệm, nó tương đương với một bảng trong cơ sở dữ liệu quan hệ hoặc một khung dữ liệu trong R / Python, nhưng với các tối ưu hóa phong phú hơn. DataFrames có thể được xây dựng từ nhiều nguồn như tệp dữ liệu có cấu trúc, Hive table, cơ sở dữ liệu bên ngoài hoặc RDD hiện có.<br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp; Dataframe thường đề cập đến một cấu trúc dữ liệu, có bản chất là dạng bảng. Nó đại diện cho các Hàng, mỗi hàng bao gồm một số quan sát. Các hàng có thể có nhiều định dạng dữ liệu khác nhau (Không đồng nhất), trong khi một cột có thể có dữ liệu có cùng kiểu dữ liệu (Đồng nhất). Khung dữ liệu thường chứa một số siêu dữ liệu ngoài dữ liệu; ví dụ, tên cột và hàng.<br>
-<p align="center"><img src ="https://user-images.githubusercontent.com/77878466/106385587-a290a500-6403-11eb-94fc-bd770314e097.png" width="65%"/></p>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Trong Spark , DataFrames là tập hợp dữ liệu phân tán, được tổ chức thành các hàng và cột. Mỗi cột trong DataFrame có một tên và một kiểu liên kết. DataFrames tương tự như các bảng cơ sở dữ liệu truyền thống, được cấu trúc và ngắn gọn. Có thể nói DataFrames là cơ sở dữ liệu quan hệ với các kỹ thuật tối ưu hóa tốt hơn.<br><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Spark DataFrames có thể được tạo từ nhiều nguồn khác nhau, chẳng hạn như bảng Hive, bảng nhật ký, cơ sở dữ liệu bên ngoài hoặc RDD hiện có . DataFrames cho phép xử lý một lượng lớn dữ liệu.<br>
 </div>
 
 ### II. Lợi ích mà DataFrame mang lại
+
+&nbsp;&nbsp;&nbsp;&nbsp;Sử dụng Công cụ tối ưu hóa đầu vào : DataFrames sử dụng các công cụ tối ưu hóa đầu vào, ví dụ: Trình tối ưu hóa xúc tác , để xử lý dữ liệu một cách hiệu quả. Chúng ta có thể sử dụng cùng một công cụ cho tất cả các API Python, Java, Scala và R DataFrame.
+&nbsp;&nbsp;&nbsp;&nbsp;Xử lý dữ liệu có cấu trúc : DataFrames cung cấp một cái nhìn sơ đồ về dữ liệu. Ở đây, dữ liệu có một số ý nghĩa đối với nó khi nó đang được lưu trữ.
+&nbsp;&nbsp;&nbsp;&nbsp;Quản lý bộ nhớ tùy chỉnh : Trong RDD, dữ liệu được lưu trữ trong bộ nhớ, trong khi DataFrames lưu trữ dữ liệu ngoài đống (bên ngoài không gian chính của Java Heap, nhưng vẫn bên trong RAM), do đó làm giảm quá tải thu gom rác.
+&nbsp;&nbsp;&nbsp;&nbsp;Tính linh hoạt : DataFrames, giống như RDD, có thể hỗ trợ nhiều định dạng dữ liệu khác nhau, chẳng hạn như CSV, Cassandra , v.v.
+&nbsp;&nbsp;&nbsp;&nbsp;Khả năng mở rộng : DataFrames có thể được tích hợp với nhiều công cụ Dữ liệu lớn khác và chúng cho phép xử lý megabyte đến petabyte dữ liệu cùng một lúc.
 <ul align="justify">
   <li><b><em>Xử lý dữ liệu có cấu trúc và bán cấu trúc</em></b>: DataFrames được thiết kế để xử lý một tập hợp lớn dữ liệu có cấu trúc cũng như bán cấu trúc . Các quan sát trong Spark DataFrame được tổ chức dưới các cột được đặt tên, giúp Apache Spark hiểu được lược đồ của Dataframe. Điều này giúp Spark tối ưu hóa kế hoạch thực thi trên các truy vấn này. Nó cũng có thể xử lý hàng petabyte dữ liệu.</li></br>
   
