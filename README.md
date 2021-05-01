@@ -251,6 +251,4 @@ prediction = model.predict([0.0, 0.0])
 
 &nbsp;&nbsp;&nbsp;&nbsp; 3. https://sparkbyexamples.com/pyspark-tutorial/
 
-&nbsp;&nbsp;&nbsp;&nbsp; 4. https://ichi.pro/vi/spark-for-machine-learning-su-dung-python-va-mllib-74075263465224?fbclid=IwAR1mcgL68P3_A3ywD1-PhKNTAbnhCQO1mtsdJJgCLIJzhDjzovJBmKVDNus
-
-&nbsp;&nbsp;&nbsp;&nbsp; 5. https://www.baeldung.com/spark-mlib-machine-learning
+&nbsp;&nbsp;&nbsp;&nbsp; 4. https://www.baeldung.com/spark-mlib-machine-learning
