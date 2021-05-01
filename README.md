@@ -8,15 +8,15 @@
 </div>
 
 ### II. Lợi ích mà DataFrame mang lại
-  <li><b><em>Sử dụng Công cụ tối ưu hóa đầu vào : DataFrames sử dụng các công cụ tối ưu hóa đầu vào, ví dụ: Trình tối ưu hóa xúc tác , để xử lý dữ liệu một cách hiệu quả. Chúng ta có thể sử dụng cùng một công cụ cho tất cả các API Python, Java, Scala và R DataFrame.</li></br>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Sử dụng Công cụ tối ưu hóa đầu vào : DataFrames sử dụng các công cụ tối ưu hóa đầu vào, ví dụ: Trình tối ưu hóa xúc tác , để xử lý dữ liệu một cách hiệu quả. Chúng ta có thể sử dụng cùng một công cụ cho tất cả các API Python, Java, Scala và R DataFrame.
   
-  <li><b><em></em>Slicing và Dicing</b>: Xử lý dữ liệu có cấu trúc : DataFrames cung cấp một cái nhìn sơ đồ về dữ liệu. Ở đây, dữ liệu có một số ý nghĩa đối với nó khi nó đang được lưu trữ.</li></br>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Xử lý dữ liệu có cấu trúc : DataFrames cung cấp một cái nhìn sơ đồ về dữ liệu. Ở đây, dữ liệu có một số ý nghĩa đối với nó khi nó đang được lưu trữ.
   
-  <li><b><em></em>Hỗ trợ nhiều ngôn ngữ</b>: Quản lý bộ nhớ tùy chỉnh : Trong RDD, dữ liệu được lưu trữ trong bộ nhớ, trong khi DataFrames lưu trữ dữ liệu ngoài đống (bên ngoài không gian chính của Java Heap, nhưng vẫn bên trong RAM), do đó làm giảm quá tải thu gom rác.</li></br>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Hỗ trợ nhiều ngôn ngữ</b>: Quản lý bộ nhớ tùy chỉnh : Trong RDD, dữ liệu được lưu trữ trong bộ nhớ, trong khi DataFrames lưu trữ dữ liệu ngoài đống (bên ngoài không gian chính của Java Heap, nhưng vẫn bên trong RAM), do đó làm giảm quá tải thu gom rác.
+
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Tính linh hoạt : DataFrames, giống như RDD, có thể hỗ trợ nhiều định dạng dữ liệu khác nhau, chẳng hạn như CSV, Cassandra , v.v.
   
-  <li><b><em>Nguồn dữ liệu</em></b>: Tính linh hoạt : DataFrames, giống như RDD, có thể hỗ trợ nhiều định dạng dữ liệu khác nhau, chẳng hạn như CSV, Cassandra , v.v.</li></br>
-  
-   <li><b><em>Nguồn dữ liệu</em></b>: Khả năng mở rộng : DataFrames có thể được tích hợp với nhiều công cụ Dữ liệu lớn khác và chúng cho phép xử lý megabyte đến petabyte dữ liệu cùng một lúc.</li></br>
+<p align="justify"> &nbsp;&nbsp;&nbsp;&nbsp;Khả năng mở rộng : DataFrames có thể được tích hợp với nhiều công cụ Dữ liệu lớn khác và chúng cho phép xử lý megabyte đến petabyte dữ liệu cùng một lúc.
     
 ### III.	Các tính năng của DataFrame, nguồn dữ liệu PySpark và các định dạng tệp được hỗ trợ
 #### 1.	Các tính năng
