@@ -8,20 +8,17 @@
 </div>
 
 ### II. Lợi ích mà DataFrame mang lại
-
-&nbsp;&nbsp;&nbsp;&nbsp;Sử dụng Công cụ tối ưu hóa đầu vào : DataFrames sử dụng các công cụ tối ưu hóa đầu vào, ví dụ: Trình tối ưu hóa xúc tác , để xử lý dữ liệu một cách hiệu quả. Chúng ta có thể sử dụng cùng một công cụ cho tất cả các API Python, Java, Scala và R DataFrame.
-&nbsp;&nbsp;&nbsp;&nbsp;Xử lý dữ liệu có cấu trúc : DataFrames cung cấp một cái nhìn sơ đồ về dữ liệu. Ở đây, dữ liệu có một số ý nghĩa đối với nó khi nó đang được lưu trữ.
-&nbsp;&nbsp;&nbsp;&nbsp;Quản lý bộ nhớ tùy chỉnh : Trong RDD, dữ liệu được lưu trữ trong bộ nhớ, trong khi DataFrames lưu trữ dữ liệu ngoài đống (bên ngoài không gian chính của Java Heap, nhưng vẫn bên trong RAM), do đó làm giảm quá tải thu gom rác.
-&nbsp;&nbsp;&nbsp;&nbsp;Tính linh hoạt : DataFrames, giống như RDD, có thể hỗ trợ nhiều định dạng dữ liệu khác nhau, chẳng hạn như CSV, Cassandra , v.v.
-&nbsp;&nbsp;&nbsp;&nbsp;Khả năng mở rộng : DataFrames có thể được tích hợp với nhiều công cụ Dữ liệu lớn khác và chúng cho phép xử lý megabyte đến petabyte dữ liệu cùng một lúc.
 <ul align="justify">
-  <li><b><em>Xử lý dữ liệu có cấu trúc và bán cấu trúc</em></b>: DataFrames được thiết kế để xử lý một tập hợp lớn dữ liệu có cấu trúc cũng như bán cấu trúc . Các quan sát trong Spark DataFrame được tổ chức dưới các cột được đặt tên, giúp Apache Spark hiểu được lược đồ của Dataframe. Điều này giúp Spark tối ưu hóa kế hoạch thực thi trên các truy vấn này. Nó cũng có thể xử lý hàng petabyte dữ liệu.</li></br>
+  <li><b><em>Sử dụng Công cụ tối ưu hóa đầu vào : DataFrames sử dụng các công cụ tối ưu hóa đầu vào, ví dụ: Trình tối ưu hóa xúc tác , để xử lý dữ liệu một cách hiệu quả. Chúng ta có thể sử dụng cùng một công cụ cho tất cả các API Python, Java, Scala và R DataFrame.</li></br>
   
-  <li><b><em></em>Slicing và Dicing</b>: API DataFrames thường hỗ trợ các phương pháp phức tạp để cắt và phân loại dữ liệu. Nó bao gồm các hoạt động như "selecting" hàng, cột và ô theo tên hoặc theo số, lọc ra các hàng, v.v. Dữ liệu thống kê thường rất lộn xộn và chứa nhiều giá trị bị thiếu và không chính xác cũng như vi phạm phạm vi. Vì vậy, một tính năng cực kỳ quan trọng của DataFrames là quản lý rõ ràng dữ liệu bị thiếu.</li></br>
+  <li><b><em></em>Slicing và Dicing</b>: Xử lý dữ liệu có cấu trúc : DataFrames cung cấp một cái nhìn sơ đồ về dữ liệu. Ở đây, dữ liệu có một số ý nghĩa đối với nó khi nó đang được lưu trữ.</li></br>
   
-  <li><b><em></em>Hỗ trợ nhiều ngôn ngữ</b>: Hỗ trợ API cho các ngôn ngữ khác nhau như Python, R, Scala, Java, giúp những người có nền tảng lập trình khác nhau sử dụng dễ dàng hơn.</li></br>
+  <li><b><em></em>Hỗ trợ nhiều ngôn ngữ</b>: Quản lý bộ nhớ tùy chỉnh : Trong RDD, dữ liệu được lưu trữ trong bộ nhớ, trong khi DataFrames lưu trữ dữ liệu ngoài đống (bên ngoài không gian chính của Java Heap, nhưng vẫn bên trong RAM), do đó làm giảm quá tải thu gom rác.</li></br>
   
-  <li><b><em>Nguồn dữ liệu</em></b>: DataFrames có hỗ trợ cho nhiều định dạng và nguồn dữ liệu, chúng ta sẽ xem xét vấn đề này sau trong hướng dẫn Pyspark DataFrames này. Họ có thể lấy dữ liệu từ nhiều nguồn khác nhau.</li></br>
+  <li><b><em>Nguồn dữ liệu</em></b>: Tính linh hoạt : DataFrames, giống như RDD, có thể hỗ trợ nhiều định dạng dữ liệu khác nhau, chẳng hạn như CSV, Cassandra , v.v.</li></br>
+  
+   <li><b><em>Nguồn dữ liệu</em></b>: Khả năng mở rộng : DataFrames có thể được tích hợp với nhiều công cụ Dữ liệu lớn khác và chúng cho phép xử lý megabyte đến petabyte dữ liệu cùng một lúc.</li></br>
+    
 </ul>
 
 ### III.	Các tính năng của DataFrame, nguồn dữ liệu PySpark và các định dạng tệp được hỗ trợ
